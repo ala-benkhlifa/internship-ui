@@ -26,11 +26,13 @@ jobs:
       - uses: actions/checkout@v2
       - name: SonarCloud
         uses: SonarSource/sonarcloud-github-action@v1.1
-        env:
-          SONAR_TOKEN: $ {{ secrets.SONAR_TOKEN }}
-          GITHUB_TOKEN: $ {{ secrets.GITHUB_TOKEN }}
+        with:
           SONAR.ORGANIZATION: ala-benkhlifa
           SONAR.PROJECTKEY: ala-benkhlifa_internship-ui
           SONAR.SOURCES: .
           SONAR.HOST.URL: https://sonarcloud.io
           SONAR.LOGIN: $ {{ secrets.GITHUB_TOKEN }}
+        env:
+          SONAR_TOKEN: $ {{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: $ {{ secrets.GITHUB_TOKEN }}
+          
