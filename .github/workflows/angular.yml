@@ -29,8 +29,8 @@ jobs:
         env:
           SONAR_TOKEN: $ {{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: $ {{ secrets.GITHUB_TOKEN }}
-          INPUT_DSONAR.ORGANIZATION: ala-benkhlifa
-          INPUT_DSONAR.PROJECTKEY: ala-benkhlifa_internship-ui
-          INPUT_DSONAR.SOURCES: .
-          INPUT_DSONAR.HOST.URL: https://sonarcloud.io
-          INPUT_DSONAR.LOGIN: $ {{ secrets.GITHUB_TOKEN }}
+          SONAR.ORGANIZATION: ala-benkhlifa
+          SONAR.PROJECTKEY: ala-benkhlifa_internship-ui
+          SONAR.SOURCES: .
+          SONAR.HOST.URL: https://sonarcloud.io
+          SONAR.LOGIN: $ {{ secrets.GITHUB_TOKEN }}
