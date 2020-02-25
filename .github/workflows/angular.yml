@@ -18,3 +18,14 @@ jobs:
     - run: npm run build --if-present
       env:
         CI: true
+  sonar:
+    name: sonar
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: SonarCloud
+        uses: SonarSource/sonarcloud-github-action@v1.1
+        env:
+          SONAR_TOKEN: $ {{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: $ {{ secrets.GITHUB_TOKEN }}
