@@ -31,8 +31,8 @@ jobs:
           SONAR.PROJECTKEY: ala-benkhlifa_internship-ui
           SONAR.SOURCES: .
           SONAR.HOST.URL: https://sonarcloud.io
-          SONAR.LOGIN: $ {{ secrets.SONAR_LOGIN }}
-          SONAR.PASS: $ {{ secrets.SONAR_PASS }}
+          sonar.login: $ {{ secrets.SONAR_LOGIN }}
+          sonar.password: $ {{ secrets.SONAR_PASS }}
         env:
           SONAR_TOKEN: $ {{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: $ {{ secrets.GITHUB_TOKEN }}
