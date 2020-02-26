@@ -1,10 +1,29 @@
-import { Component, Input } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {HelloService} from "./hello.service";
 
 @Component({
-  selector: 'hello',
-  template: `<h1>Hello {{name}}!</h1>`,
-  styles: [`h1 { font-family: Lato; }`]
+    selector: 'hello',
+    templateUrl: `hello.component.html`,
+    styles: [`h1 {
+        font-family: Lato;
+    }`]
 })
-export class HelloComponent  {
-  @Input() name: string;
+export class HelloComponent implements OnInit {
+
+    @Input() name: string;
+
+    person;
+
+    constructor(private service: HelloService) {
+    }
+
+    ngOnInit() {
+        this.getPerson();
+    }
+
+    getPerson() {
+        this.person = this.service.getPerson();
+    }
+
+
 }
