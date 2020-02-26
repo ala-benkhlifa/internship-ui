@@ -9,11 +9,8 @@ import {HelloService} from "./hello.service";
     }`]
 })
 export class HelloComponent implements OnInit {
-
     @Input() name: string;
-
     person;
-
     constructor(private service: HelloService) {
     }
 
