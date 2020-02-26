@@ -25,7 +25,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: SonarCloud Scan
-        uses: kitabisa/sonarqube-action@v0.0.1
+      - uses: mathrix-education/sonar-scanner@master
+      - name: SonarCloud
         with:
-          host: https://sonarcloud.io
-          login: $ {{ secrets.GITHUB_TOKEN }}
+          version: 4.2.0.1873
+          typescript: true
+          scan: true
+          args: -Dsonar.organization=ala-benkhlifa \
+            -Dsonar.projectKey=ala-benkhlifa_internship-ui \
+            -Dsonar.sources=. \
+            -Dsonar.host.url=https://sonarcloud.io \
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
