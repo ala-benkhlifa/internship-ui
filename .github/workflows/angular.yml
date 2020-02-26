@@ -26,6 +26,8 @@ jobs:
       - uses: actions/checkout@v2
       - name: SonarCloud
         uses: SonarSource/sonarcloud-github-action@v1.1
+        with:
+          project.settings: ./sonar-project.properties
         env:
           SONAR_TOKEN: $ {{ secrets.SONAR_TOKEN }}
           GITHUB_TOKEN: $ {{ secrets.GITHUB_TOKEN }}
